@@ -2,6 +2,28 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application's resources outside of Lambdas and Api Gateway",
   "Resources": {
+    "DynamoDBTable" : {
+      "Type" : "AWS::DynamoDB::Table",
+      "Properties" : {
+        "AttributeDefinitions" : [
+          {
+            "AttributeName" : "email",
+            "AttributeType" : "S"   
+          }
+        ],
+        "KeySchema" : [
+          {
+            "AttributeName" : "email",
+            "KeyType" : "HASH"
+          }
+        ],
+        "ProvisionedThroughput" : {
+          "ReadCapacityUnits" : "5",
+          "WriteCapacityUnits" : "5"
+        },
+        "TableName" : "${project}-${stage}-users"
+      }
+    },
     "IamRoleLambda": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -39,6 +61,13 @@
                 "logs:PutLogEvents"
               ],
               "Resource": "arn:aws:logs:${region}:*:*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "*"
+              ],
+              "Resource": "arn:aws:dynamodb:${region}:*:table/${project}-${stage}-ProductSerarchTotalvalue"
             }
           ]
         },

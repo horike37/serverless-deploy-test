@@ -9,5 +9,14 @@
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {}
+  "scripts": {
+    "test": "export NODE_PATH=`npm root -g` && mocha tests/all"
+  },
+  "dependencies": {
+    "aws-sdk": ">=2.3.9"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
 }

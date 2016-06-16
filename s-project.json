@@ -1,5 +1,8 @@
 {
   "name": "serverless-hkmkmh",
   "custom": {},
-  "plugins": []
+  "plugins": [
+    "serverless-unittest-boilerplate",
+    "serverless-command-line-event-args"
+  ]
 }
