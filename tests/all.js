@@ -15,8 +15,8 @@ describe('ServerlessProjectTest', function() {
 
     s = new Serverless({
     			interactive: false,
-                awsAdminKeyId: process.env.AWS_ACCESS_KEY,
-                awsAdminSecretKey: process.env.AWS_SECRET_KEY
+                awsAdminKeyId: process.env.AWS_ACCESS_KEY_ID,
+                awsAdminSecretKey: process.env.AWS_SECRET_ACCESS_KEY
     		});
 
     s.init().then(function() {

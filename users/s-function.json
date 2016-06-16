@@ -10,8 +10,7 @@
   "authorizer": {},
   "custom": {
     "excludePatterns": [
-      "node_modules/aws-sdk/",
-      "node_modules/dynamodb-doc/"
+      "node_modules/aws-sdk/"
     ]
   },
   "endpoints": [
