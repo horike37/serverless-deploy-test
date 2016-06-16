@@ -13,11 +13,11 @@ describe('ServerlessProjectTest', function() {
   beforeEach(function(done) {
     this.timeout(0);
 
-    s = new Serverless(
+    s = new Serverless({
     			interactive: false,
                 awsAdminKeyId: process.env.AWS_ACCESS_KEY,
                 awsAdminSecretKey: process.env.AWS_SECRET_KEY
-    		);
+    		});
 
     s.init().then(function() {
       s.config.projectPath = __dirname + '/../';
